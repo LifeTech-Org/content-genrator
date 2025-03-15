@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Select, { ActionMeta, MultiValue, SingleValue } from "react-select";
-const CustomSelect = ({ name, label, placeholder, values, handleSelectChange, handleChange, showOthers, isMulti = false, otherType = "text" }: {
+const CustomSelect = ({ name, label, placeholder, values, handleSelectChange, handleChange, showOthers, isMulti = false, otherType = "text", value }: {
     label: string,
     name: string;
     placeholder?: string;
@@ -14,6 +15,7 @@ const CustomSelect = ({ name, label, placeholder, values, handleSelectChange, ha
     }>) => void) | undefined; handleChange: React.ChangeEventHandler<HTMLInputElement>,
     showOthers: boolean
     isMulti?: boolean
+    value?: any
 }) => {
     return <label className="block text-sm font-medium text-gray-700">{label}
         <Select
@@ -22,6 +24,7 @@ const CustomSelect = ({ name, label, placeholder, values, handleSelectChange, ha
             onChange={handleSelectChange}
             placeholder={placeholder}
             isMulti={isMulti}
+            value={value ? (Array.isArray(value) ? Array.from(value).map((v) => { return { label: values.find(({ value: c }) => c === v)!.label, value: v } }) : [{ value, label: values.find(({ value: d }) => d === value)!.label }]) : undefined}
         />
         {showOthers && (
             <input

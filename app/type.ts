@@ -5,10 +5,11 @@ export type TFormData = {
   emailType?: string;
   subjectLineGeneration?: string;
   subjectLineStyle?: string;
-  outputFormat?: string;
+  emailOutputFormat?: string;
   emailSequenceType?: string;
   noOfEmailsInSeq?: string;
   emailsInterval?: string;
+  emailsobj?: [];
   smsType?: string;
   smsSequence?: string;
   smsInterval?: string;
@@ -30,18 +31,3 @@ export type TFormData = {
   offerDetails?: string;
   keywords?: string[];
 };
-
-//   smsSequence: string | null;
-//   socialMediaHashtags: string | null;
-//   blogArticleType: string | null;
-//   articleStructure: string | null;
-//   writingStyle: string | null;
-//   targetAudience: string | null;
-//   communicationObjective: string | null;
-//   contentLength: string | null;
-//   elementsToInclude: string | null;
-//   aiModel: string | null;
-//   urgencyLevel: string | null;
-//   keywords: string | null;
-//   outputFormat: string | null;
-//   specificOfferInfo: string | null;
