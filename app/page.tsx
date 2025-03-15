@@ -48,7 +48,7 @@ const ContentGenerationForm = () => {
         onSubmit={onSubmit}
         className="w-full max-w-lg bg-white space-y-4"
       >
-        <h3 className="text-center">Please fill all details correctly!</h3>
+        <h3 className="text-center text-primary uppercase font-semibold">Please fill all details correctly!</h3>
         <CustomSelect value={formData.targetCountry} name="targetCountry" handleChange={handleChange} handleSelectChange={handleSelectChange} label="Target Country/Market" placeholder="Select a country..." showOthers={formData.targetCountry !== undefined && (formData.targetCountry === "" || !countries.find(({ value }) => formData.targetCountry === value))} values={countries} />
         <CustomSelect value={formData.language} name="language" handleChange={handleChange} handleSelectChange={handleSelectChange} label="Language" placeholder="Select a language..." showOthers={formData.language !== undefined && (formData.language === "" || !languages.find(({ value }) => formData.language === value))} values={languages} />
 
