@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #2979ff; /* Cool blue primary color */
+  --secondary: #f4f4f5;
+  --border: #d1d5db;
+  --font-sans: "Inter", Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #1e5cd6;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 4px rgba(41, 121, 255, 0.4);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+  color: white;
+}
