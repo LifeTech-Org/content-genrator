@@ -1,0 +1,680 @@
+{
+  "title": "Générateur de Contenu",
+  "upload_placeholder": "Cliquez pour télécharger un modèle de formulaire ou glissez-déposez",
+  "form": {
+    "heading": "VEUILLEZ REMPLIR TOUS LES DÉTAILS CORRECTEMENT !",
+    "subject": {
+      "label": "Sujet/Thème",
+      "placeholder": "Écrivez le sujet/thème"
+    },
+    "description": {
+      "label": "Brève description",
+      "placeholder": "Écrivez une brève description..."
+    },
+    "target_country": {
+      "label": "Pays/Marché cible",
+      "placeholder": "Sélectionnez un pays..."
+    },
+    "language": {
+      "label": "Langue",
+      "placeholder": "Sélectionnez une langue..."
+    },
+    "content_format": {
+      "label": "Format principal du contenu",
+      "placeholder": "Sélectionnez un format de contenu..."
+    },
+    "writing_style": {
+      "label": "Style/Ton d'écriture",
+      "placeholder": "Sélectionnez un ton..."
+    },
+    "target_audience": {
+      "label": "Public cible/Personnes",
+      "placeholder": "Sélectionnez un public cible..."
+    },
+    "communication_objectives": {
+      "label": "Objectifs de communication",
+      "placeholder": "Sélectionnez les objectifs de communication"
+    },
+    "content_length": {
+      "label": "Longueur du contenu",
+      "placeholder": "Sélectionnez la longueur du contenu"
+    },
+    "elements_to_include": {
+      "label": "Éléments à inclure",
+      "placeholder": "Sélectionnez les éléments à inclure"
+    },
+    "ai_model": {
+      "label": "Modèle IA à utiliser",
+      "placeholder": "Sélectionnez un modèle"
+    },
+    "urgency_level": {
+      "label": "Niveau d'urgence",
+      "placeholder": "Sélectionnez le niveau d'urgence"
+    },
+    "keywords": {
+      "label": "Mots-clés à inclure",
+      "placeholder": "Saisissez jusqu'à 5 mots-clés..."
+    },
+    "output_format": {
+      "label": "Format de sortie",
+      "placeholder": "Sélectionnez le format de sortie"
+    },
+    "email_marketting": {
+      "email_type": {
+        "label": "Type d'e-mail",
+        "placeholder": "Sélectionnez un type d'e-mail..."
+      },
+      "subject_line_generation": {
+        "label": "Génération de l'objet",
+        "placeholder": "Sélectionnez Oui/Non"
+      },
+      "subject_line_style": {
+        "label": "Style de l'objet",
+        "placeholder": "Sélectionnez un style"
+      },
+      "email_output_format": {
+        "label": "Format de sortie de l'e-mail",
+        "placeholder": "Sélectionnez un format"
+      },
+      "email_sequence_type": {
+        "label": "Type de séquence d'e-mails",
+        "placeholder": "Sélectionnez une séquence"
+      },
+      "no_of_emails_in_seq": {
+        "label": "Nombre d'e-mails dans la séquence",
+        "placeholder": "Entrez un nombre"
+      },
+      "emails_interval": {
+        "label": "Intervalle entre les e-mails",
+        "placeholder": "Entrez un intervalle"
+      },
+      "email_objective": {
+        "label": "Objectif de l'e-mail",
+        "placeholder": "Sélectionnez un objectif"
+      },
+      "email_trigger": {
+        "label": "Déclencheur de l'e-mail",
+        "placeholder": "Sélectionnez un déclencheur"
+      }
+    },
+    "sms": {
+      "sms_type": {
+        "label": "Type de SMS",
+        "placeholder": "Sélectionnez un type de SMS"
+      },
+      "sms_sequence": {
+        "label": "Nombre de SMS dans la séquence (2-5)",
+        "placeholder": "Entrez un nombre"
+      },
+      "sms_interval": {
+        "label": "Intervalle entre les SMS (heures)",
+        "placeholder": "Entrez un intervalle"
+      },
+      "sms_sequence_obj": {
+        "label": "Objectif de la séquence de SMS",
+        "placeholder": "Sélectionnez un objectif"
+      }
+    },
+    "social_media": {
+      "hash_tag_inclusion": {
+        "label": "Inclure des hashtags",
+        "placeholder": "Sélectionnez Oui/Non"
+      },
+      "number_of_desired_hashtags": {
+        "label": "Nombre de hashtags souhaités",
+        "placeholder": "Entrez un nombre"
+      }
+    },
+    "blog_article": {
+      "article_type": {
+        "label": "Type d'article",
+        "placeholder": "Sélectionnez un type d'article"
+      },
+      "sequence": {
+        "label": "Nombre d'articles dans la série",
+        "placeholder": ""
+      },
+      "series_structure": {
+        "label": "Structure de la série",
+        "placeholder": ""
+      },
+      "article_structure": {
+        "label": "Structure de l'article",
+        "placeholder": "Sélectionnez une structure d'article"
+      }
+    }
+  },
+  "preview": "Aperçu",
+  "select_generated_content": "Sélectionnez votre contenu généré par IA",
+  "preview_modal": {
+    "title": "Aperçu du formulaire",
+    "save_template": "Enregistrer le modèle",
+    "submit": "Soumettre"
+  },
+  "confirm_selection": "Confirmer la sélection",
+  "sign_out": "Se déconnecter",
+  "data": {
+    "countries": [
+      { "label": "France", "value": "France" },
+      { "label": "Espagne", "value": "Spain" },
+      { "label": "États-Unis (marché hispanique)", "value": "US-Hispanic" },
+      { "label": "États-Unis (anglophone)", "value": "US-English" },
+      { "label": "Allemagne", "value": "Germany" },
+      { "label": "Angleterre", "value": "England" },
+      { "label": "Mexique", "value": "Mexico" },
+      { "label": "Colombie", "value": "Colombia" },
+      { "label": "Argentine", "value": "Argentina" },
+      { "label": "Chili", "value": "Chile" },
+      { "label": "Pérou", "value": "Peru" },
+      { "label": "Venezuela", "value": "Venezuela" },
+      { "label": "Porto Rico", "value": "Puerto Rico" },
+      { "label": "République dominicaine", "value": "Dominican Republic" },
+      { "label": "Cuba", "value": "Cuba" },
+      { "label": "Équateur", "value": "Ecuador" },
+      { "label": "Guatemala", "value": "Guatemala" },
+      { "label": "Honduras", "value": "Honduras" },
+      { "label": "El Salvador", "value": "El Salvador" },
+      { "label": "Nicaragua", "value": "Nicaragua" },
+      { "label": "Costa Rica", "value": "Costa Rica" },
+      { "label": "Panama", "value": "Panama" },
+      { "label": "Bolivie", "value": "Bolivia" },
+      { "label": "Paraguay", "value": "Paraguay" },
+      { "label": "Uruguay", "value": "Uruguay" },
+      { "label": "Autre", "value": "" }
+    ],
+    "languages": [
+      { "label": "Français (France)", "value": "French (France)" },
+      { "label": "Français (Québec)", "value": "French (Quebec)" },
+      { "label": "Espagnol (Espagne)", "value": "Spanish (Spain)" },
+      { "label": "Espagnol (Mexique)", "value": "Spanish (Mexico)" },
+      {
+        "label": "Espagnol (Amérique latine - standard)",
+        "value": "Spanish (Latin America - standard)"
+      },
+      {
+        "label": "Espagnol (Argentine/Uruguay - avec voseo)",
+        "value": "Spanish (Argentina/Uruguay - with voseo)"
+      },
+      { "label": "Anglais (États-Unis)", "value": "English (United States)" },
+      { "label": "Anglais (Royaume-Uni)", "value": "English (United Kingdom)" },
+      { "label": "Allemand", "value": "German" },
+      { "label": "Portugais (Brésil)", "value": "Portuguese (Brazil)" },
+      { "label": "Portugais (Portugal)", "value": "Portuguese (Portugal)" },
+      { "label": "Catalan", "value": "Catalan" },
+      { "label": "Autre", "value": "" }
+    ],
+    "contentFormats": [
+      { "label": "Marketing par e-mail", "value": "Email marketing" },
+      { "label": "Newsletter", "value": "Newsletter" },
+      { "label": "SMS", "value": "SMS" },
+      {
+        "label": "Publication Instagram",
+        "value": "Social Media - Instagram post"
+      },
+      { "label": "Story Instagram", "value": "Social Media - Instagram story" },
+      { "label": "Reel Instagram", "value": "Social Media - Instagram reel" },
+      {
+        "label": "Publication Facebook",
+        "value": "Social Media - Facebook post"
+      },
+      { "label": "Story Facebook", "value": "Social Media - Facebook story" },
+      {
+        "label": "Publication Twitter/X",
+        "value": "Social Media - Tweet/X post"
+      },
+      {
+        "label": "Publication LinkedIn",
+        "value": "Social Media - LinkedIn post"
+      },
+      { "label": "Article de blog", "value": "Blog article" },
+      {
+        "label": "Script de vidéo TikTok",
+        "value": "Social Media - TikTok video script"
+      },
+      {
+        "label": "Script de vidéo YouTube",
+        "value": "Social Media - YouTube video script"
+      },
+      { "label": "Fiche produit", "value": "Product sheet" },
+      { "label": "Description du service", "value": "Service description" },
+      { "label": "Page 'À propos'", "value": "About page" },
+      {
+        "label": "Biographie professionnelle",
+        "value": "Professional biography"
+      },
+      { "label": "Témoignage client", "value": "Customer testimonial" },
+      { "label": "Étude de cas", "value": "Case study" },
+      { "label": "Page de destination", "value": "Landing page" },
+      { "label": "Pop-up", "value": "Pop-up" },
+      { "label": "Message WhatsApp", "value": "WhatsApp message" }
+    ],
+    "subjectLineStyles": [
+      { "label": "Direct et informatif", "value": "Direct and informative" },
+      { "label": "Question intrigante", "value": "Intriguing question" },
+      { "label": "Créatif et original", "value": "Creative and original" },
+      {
+        "label": "Personnalisé avec des variables",
+        "value": "Personalized with variables"
+      },
+      {
+        "label": "Incluant une offre/promotion",
+        "value": "Including an offer/promotion"
+      },
+      {
+        "label": "Créer un sentiment d'urgence",
+        "value": "Creating a sense of urgency"
+      },
+      { "label": "Mystérieux (curiosité)", "value": "Mysterious (curiosity)" },
+      {
+        "label": "Professionnel et discret",
+        "value": "Professional and understated"
+      }
+    ],
+    "emailOutputFormats": [
+      { "label": "Texte brut", "value": "Plain text" },
+      {
+        "label": "HTML basique (avec mise en forme simple)",
+        "value": "Basic HTML"
+      },
+      {
+        "label": "HTML avancé (avec design, boutons, etc.)",
+        "value": "Advanced HTML"
+      },
+      { "label": "JSON", "value": "JSON" },
+      { "label": "Markdown", "value": "Markdown" }
+    ],
+    "smsSequenceObjectives": [
+      { "label": "Notification d'offre", "value": "Offer notification" },
+      { "label": "Rappel d'événement", "value": "Event reminder" },
+      {
+        "label": "Confirmation progressive",
+        "value": "Progressive confirmation"
+      },
+      { "label": "Suivi client", "value": "Customer follow-up" }
+    ],
+    "writingStyles": [
+      {
+        "label": "Formel et professionnel",
+        "value": "Formal and professional"
+      },
+      {
+        "label": "Conversational et amical",
+        "value": "Conversational and friendly"
+      },
+      { "label": "Inspirant et motivant", "value": "Inspiring and motivating" },
+      { "label": "Mystique et spirituel", "value": "Mystical and spiritual" },
+      { "label": "Persuasif et vendeur", "value": "Persuasive and selling" },
+      {
+        "label": "Informatif et éducatif",
+        "value": "Informative and educational"
+      },
+      { "label": "Émotionnel et touchant", "value": "Emotional and touching" },
+      { "label": "Humoristique et léger", "value": "Humorous and light" },
+      { "label": "Autoritaire et expert", "value": "Authoritative and expert" },
+      {
+        "label": "Rassurant et empathique",
+        "value": "Reassuring and empathetic"
+      },
+      { "label": "Intime et personnel", "value": "Intimate and personal" },
+      { "label": "Énergique et dynamique", "value": "Energetic and dynamic" },
+      {
+        "label": "Mystérieux et intriguant",
+        "value": "Mysterious and intriguing"
+      },
+      { "label": "Direct et concis", "value": "Direct and concise" },
+      { "label": "Poétique et descriptif", "value": "Poetic and descriptive" },
+      {
+        "label": "Narratif (storytelling)",
+        "value": "Narrative (storytelling)"
+      }
+    ],
+    "targetAudiences": [
+      {
+        "label": "Débutants en développement personnel",
+        "value": "Beginners in personal development"
+      },
+      {
+        "label": "Personnes en quête spirituelle",
+        "value": "People on a spiritual quest"
+      },
+      {
+        "label": "Entrepreneurs et professionnels indépendants",
+        "value": "Entrepreneurs and independent professionals"
+      },
+      {
+        "label": "Professionnels en transition de carrière",
+        "value": "Professionals in career transition"
+      },
+      { "label": "Femmes (25-34 ans)", "value": "Women (25-34 years)" },
+      { "label": "Femmes (35-50 ans)", "value": "Women (35-50 years)" },
+      { "label": "Femmes (50+ ans)", "value": "Women (50+ years)" },
+      { "label": "Hommes (25-34 ans)", "value": "Men (25-34 years)" },
+      { "label": "Hommes (35-50 ans)", "value": "Men (35-50 years)" },
+      { "label": "Hommes (50+ ans)", "value": "Men (50+ years)" },
+      { "label": "Couples en difficulté", "value": "Couples in difficulty" },
+      {
+        "label": "Parents en recherche de conseils",
+        "value": "Parents seeking guidance"
+      },
+      {
+        "label": "Personnes traversant une période difficile",
+        "value": "People going through a difficult period"
+      },
+      {
+        "label": "Personnes souhaitant développer leurs dons intuitifs",
+        "value": "People wanting to develop their intuitive gifts"
+      },
+      {
+        "label": "Cadres et managers stressés",
+        "value": "Stressed executives and managers"
+      },
+      {
+        "label": "Personnes intéressées par l’ésotérisme",
+        "value": "People interested in esotericism"
+      },
+      {
+        "label": "Pratiquants de méditation et de pleine conscience",
+        "value": "Meditation and mindfulness practitioners"
+      },
+      {
+        "label": "Praticiens en thérapies alternatives",
+        "value": "Alternative therapy practitioners"
+      },
+      {
+        "label": "Clients existants (fidélisation)",
+        "value": "Existing customers (loyalty)"
+      },
+      {
+        "label": "Prospects (acquisition)",
+        "value": "Prospects (acquisition)"
+      },
+      {
+        "label": "Autres professionnels du coaching",
+        "value": "Other coaching professionals"
+      },
+      { "label": "Autre (champ libre pour préciser)", "value": "" }
+    ],
+    "communicationObjectives": [
+      {
+        "label": "Vendre un produit ou service spécifique",
+        "value": "Sell a specific product or service"
+      },
+      {
+        "label": "Promouvoir une offre limitée",
+        "value": "Promote a limited offer"
+      },
+      {
+        "label": "Annoncer un événement ou un atelier",
+        "value": "Announce an event or workshop"
+      },
+      {
+        "label": "Éduquer sur un sujet particulier",
+        "value": "Educate on a particular topic"
+      },
+      {
+        "label": "Fidéliser les clients existants",
+        "value": "Build loyalty with existing customers"
+      },
+      {
+        "label": "Réactiver d'anciens clients",
+        "value": "Reactivate former customers"
+      },
+      { "label": "Générer des prospects", "value": "Generate leads" },
+      {
+        "label": "Renforcer la notoriété de la marque",
+        "value": "Strengthen brand awareness"
+      },
+      {
+        "label": "Partager un témoignage client",
+        "value": "Share a customer testimonial"
+      },
+      {
+        "label": "Présenter un nouveau service",
+        "value": "Introduce a new service"
+      },
+      {
+        "label": "Expliquer un concept ou une méthode",
+        "value": "Explain a concept or method"
+      },
+      {
+        "label": "Répondre à une objection courante",
+        "value": "Respond to a common objection"
+      },
+      {
+        "label": "Créer un sentiment d'urgence",
+        "value": "Create a sense of urgency"
+      },
+      {
+        "label": "Offrir du contenu gratuit de valeur",
+        "value": "Offer valuable free content"
+      },
+      {
+        "label": "Inviter à rejoindre une communauté",
+        "value": "Invite to join a community"
+      },
+      {
+        "label": "Partager une réflexion personnelle",
+        "value": "Share a personal reflection"
+      },
+      {
+        "label": "Inspirer un changement de comportement",
+        "value": "Inspire a behavior change"
+      },
+      {
+        "label": "Proposer un défi ou un exercice pratique",
+        "value": "Propose a challenge or practical exercise"
+      },
+      {
+        "label": "Effectuer un sondage ou poser une question",
+        "value": "Conduct a survey or ask a question"
+      },
+      {
+        "label": "Annoncer des changements dans l'offre ou l'entreprise",
+        "value": "Announce changes in the offer or company"
+      }
+    ],
+    "contentLengths": [
+      {
+        "label": "Très court (moins de 50 mots)",
+        "value": "Very short (less than 50 words)"
+      },
+      { "label": "Court (50-150 mots)", "value": "Short (50-150 words)" },
+      { "label": "Moyen (150-300 mots)", "value": "Medium (150-300 words)" },
+      { "label": "Long (300-600 mots)", "value": "Long (300-600 words)" },
+      {
+        "label": "Très long (600-1000 mots)",
+        "value": "Very long (600-1000 words)"
+      },
+      {
+        "label": "Article (1000-1500 mots)",
+        "value": "Article (1000-1500 words)"
+      },
+      {
+        "label": "Article détaillé (1500-2500 mots)",
+        "value": "Detailed article (1500-2500 words)"
+      },
+      {
+        "label": "Contenu approfondi (plus de 2500 mots)",
+        "value": "In-depth content (more than 2500 words)"
+      }
+    ],
+    "elementsToInclude": [
+      { "label": "Titre accrocheur", "value": "Catchy title" },
+      {
+        "label": "Introduction captivante",
+        "value": "Captivating introduction"
+      },
+      {
+        "label": "Appel à l'action clair (CTA)",
+        "value": "Clear call-to-action (CTA)"
+      },
+      { "label": "Témoignages clients", "value": "Customer testimonials" },
+      {
+        "label": "Statistiques ou chiffres clés",
+        "value": "Statistics or key figures"
+      },
+      { "label": "Citations inspirantes", "value": "Inspiring quotes" },
+      {
+        "label": "Liste à puces ou numérotée",
+        "value": "Bullet or numbered list"
+      },
+      { "label": "Questions rhétoriques", "value": "Rhetorical questions" },
+      {
+        "label": "Histoires personnelles ou anecdotes",
+        "value": "Personal stories or anecdotes"
+      },
+      {
+        "label": "Images (descriptions pour l'IA)",
+        "value": "Images (descriptions for AI)"
+      },
+      {
+        "label": "Références spirituelles ou ésotériques",
+        "value": "Spiritual or esoteric references"
+      },
+      {
+        "label": "Garanties ou preuve sociale",
+        "value": "Guarantees or social proof"
+      },
+      {
+        "label": "Offre spéciale ou promotion",
+        "value": "Special offer or promotion"
+      },
+      {
+        "label": "Instructions étape par étape",
+        "value": "Step-by-step instructions"
+      },
+      {
+        "label": "Résolution d'un problème spécifique",
+        "value": "Resolution of a specific problem"
+      },
+      {
+        "label": "Mentions légales ou avertissements",
+        "value": "Legal mentions or disclaimers"
+      },
+      {
+        "label": "Invitation à partager sur les réseaux sociaux",
+        "value": "Invitation to share on social networks"
+      },
+      {
+        "label": "Formule de salutation personnalisée",
+        "value": "Personalized greeting formula"
+      },
+      { "label": "Signature personnelle", "value": "Personal signature" },
+      {
+        "label": "Bouton ou lien de réservation/achat",
+        "value": "Booking/purchase button or link"
+      },
+      { "label": "Hashtags optimisés", "value": "Optimized hashtags" },
+      { "label": "Mentions des prix", "value": "Price mentions" },
+      {
+        "label": "FAQ (questions fréquemment posées)",
+        "value": "FAQ (frequently asked questions)"
+      }
+    ],
+    "aiModels": [
+      { "label": "ChatGPT (OpenAI)", "value": "ChatGPT (OpenAI)" },
+      { "label": "Claude (Anthropic)", "value": "Claude (Anthropic)" },
+      { "label": "Mistral AI", "value": "Mistral AI" },
+      { "label": "DeepSeek", "value": "DeepSeek" },
+      { "label": "Gemini (Google)", "value": "Gemini (Google)" },
+      { "label": "Llama 3 (Meta)", "value": "Llama 3 (Meta)" },
+      { "label": "Cohere", "value": "Cohere" },
+      { "label": "Mixtral", "value": "Mixtral" },
+      {
+        "label": "Choix automatique (le système choisit le meilleur modèle)",
+        "value": "Automatic choice"
+      }
+    ],
+    "urgencyLevels": [
+      { "label": "Standard (24-48h)", "value": "Standard (24-48h)" },
+      { "label": "Priorité (12-24h)", "value": "Priority (12-24h)" },
+      { "label": "Urgent (4-8h)", "value": "Urgent (4-8h)" },
+      {
+        "label": "Très urgent (moins de 4h)",
+        "value": "Very urgent (less than 4h)"
+      },
+      {
+        "label": "Planifié (choisissez une date future spécifique)",
+        "value": ""
+      }
+    ],
+    "outputFormats": [
+      { "label": "Texte brut", "value": "plain_text" },
+      { "label": "HTML", "value": "html" },
+      { "label": "JSON", "value": "json" },
+      { "label": "Markdown", "value": "markdown" },
+      { "label": "Document Word", "value": "word" },
+      {
+        "label": "Prêt à copier (format optimisé pour copier-coller)",
+        "value": "ready_to_copy"
+      }
+    ],
+    "offerDetails": [
+      { "label": "Nom du produit/service", "value": "product_service_name" },
+      { "label": "Prix", "value": "price" },
+      {
+        "label": "Caractéristiques principales (3-5)",
+        "value": "main_features"
+      },
+      { "label": "Principaux avantages (3-5)", "value": "main_benefits" },
+      { "label": "Date de début/fin de l'offre", "value": "offer_dates" },
+      { "label": "Code promotionnel", "value": "promo_code" },
+      { "label": "URL de destination", "value": "destination_url" }
+    ],
+    "articleStructures": [
+      {
+        "label": "Standard (introduction, développement, conclusion)",
+        "value": "standard"
+      },
+      { "label": "Article sous forme de liste", "value": "listicle" },
+      {
+        "label": "Guide pratique (étape par étape)",
+        "value": "practical_guide"
+      },
+      { "label": "Article d'opinion", "value": "opinion_article" },
+      { "label": "Comparatif", "value": "comparative" },
+      { "label": "Questions-réponses (FAQ)", "value": "faq" },
+      { "label": "Étude de cas", "value": "case_study" }
+    ],
+    "seriesStructures": [
+      { "label": "Progressif (du basique à l'avancé)", "value": "progressive" },
+      {
+        "label": "Thématique (différents aspects du même sujet)",
+        "value": "thematic"
+      },
+      {
+        "label": "Narratif (histoire développée en plusieurs parties)",
+        "value": "narrative"
+      },
+      {
+        "label": "Problème-solution (description puis résolution)",
+        "value": "problem_solution"
+      }
+    ],
+    "emailSequenceTypes": [
+      { "label": "Onboarding (nouveaux clients)", "value": "onboarding" },
+      { "label": "Nurturing (éducation progressive)", "value": "nurturing" },
+      { "label": "Réactivation (clients inactifs)", "value": "reactivation" },
+      { "label": "Fidélisation (clients actifs)", "value": "loyalty" },
+      { "label": "Conversion (prospects hésitants)", "value": "conversion" },
+      {
+        "label": "Événement/Lancement (préparation et suivi)",
+        "value": "event_launch"
+      },
+      { "label": "Abandon de panier", "value": "cart_abandonment" },
+      { "label": "Suivi post-achat", "value": "post_purchase" },
+      { "label": "Séquence personnalisée", "value": "custom" }
+    ],
+    "objectives": [
+      { "label": "Bienvenue", "value": "welcome" },
+      { "label": "Contenu de valeur", "value": "content" },
+      { "label": "Offre", "value": "offer" },
+      { "label": "Témoignage", "value": "testimonial" }
+    ],
+    "triggers": [
+      { "label": "Aucun", "value": "none" },
+      { "label": "Ouvert l'e-mail précédent", "value": "opened" },
+      { "label": "Cliqué dans l'e-mail précédent", "value": "clicked" }
+    ]
+  }
+}

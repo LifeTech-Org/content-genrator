@@ -1,8 +1,8 @@
 import { FiSave, FiX, FiSend } from "react-icons/fi";
-import { TFormData } from "../type";
+import { Layout, TFormData } from "../type";
 import toast, { Toaster } from "react-hot-toast";
 
-const FormPreviewModal = ({ formData, onClose, onSubmit }: { formData: TFormData; onClose: () => void; onSubmit: () => void }) => {
+const FormPreviewModal = ({ formData, onClose, onSubmit, dict }: { formData: TFormData; onClose: () => void; onSubmit: () => void, dict: Layout }) => {
     const saveTemplate = () => {
         const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData, null, 2));
         const downloadAnchor = document.createElement("a");
@@ -21,7 +21,7 @@ const FormPreviewModal = ({ formData, onClose, onSubmit }: { formData: TFormData
             <div className="fixed inset-0 bg-gray-200/20 backdrop-blur-lg flex items-center justify-center p-4 z-50">
                 <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full relative">
                     <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-xl font-semibold">Form Preview</h2>
+                        <h2 className="text-xl font-semibold">{dict.preview_modal.title}</h2>
                         <button onClick={onClose} className="text-white !bg-red-600 hover:!bg-red-700 rounded-full p-2 transition">
                             <FiX size={20} />
                         </button>
@@ -35,14 +35,14 @@ const FormPreviewModal = ({ formData, onClose, onSubmit }: { formData: TFormData
                             className="flex items-center gap-2 !bg-blue-600 text-white px-5 py-2.5 rounded-lg shadow-md hover:!bg-blue-700 transition-all transform hover:scale-105 active:scale-100"
                         >
                             <FiSave size={18} />
-                            <span className="font-medium">Save Template</span>
+                            <span className="font-medium">{dict.preview_modal.save_template}</span>
                         </button>
                         <button
                             onClick={onSubmit}
                             className="flex items-center gap-2 !bg-green-600 text-white px-5 py-2.5 rounded-lg shadow-md hover:!bg-green-700 transition-all transform hover:scale-105 active:scale-100"
                         >
                             <FiSend size={18} />
-                            <span className="font-medium">Submit</span>
+                            <span className="font-medium">{dict.preview_modal.submit}</span>
                         </button>
                     </div>
                 </div>

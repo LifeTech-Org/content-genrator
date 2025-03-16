@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChangeEvent, DragEvent, useState } from "react";
+import { ChangeEvent, DragEvent, useContext, useState } from "react";
 import { FiUpload } from "react-icons/fi";
-import { TFormData } from "../type";
+import { Layout, TFormData } from "../type";
 import toast, { Toaster } from "react-hot-toast";
 
-const TemplateDropBox = ({ setFormData }: { setFormData: React.Dispatch<React.SetStateAction<TFormData>> }) => {
+const TemplateDropBox = ({ setFormData, dict }: { setFormData: React.Dispatch<React.SetStateAction<TFormData>>, dict: Layout }) => {
     const [isDragging, setIsDragging] = useState(false);
-
     const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         setIsDragging(true);
@@ -67,7 +66,7 @@ const TemplateDropBox = ({ setFormData }: { setFormData: React.Dispatch<React.Se
                     onClick={() => document.getElementById("fileInput")?.click()}
                 >
                     <FiUpload className="text-gray-500 text-3xl mb-2" />
-                    <p className="text-gray-600 text-sm">Click to upload a form template or drag and drop</p>
+                    <p className="text-gray-600 text-sm text-center">{dict.upload_placeholder}</p>
                     <input id="fileInput" type="file" className="hidden" onChange={handleFileSelect} accept=".json" />
                 </div>
                 <div className="w-full border-t-2 border-gray-200 my-6"></div>
