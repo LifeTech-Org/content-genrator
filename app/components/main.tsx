@@ -21,7 +21,6 @@ import { useUser } from "@clerk/nextjs";
 const MainPage = ({ dict }: { dict: Layout }) => {
     const [formData, setFormData] = useState<TFormData>({});
     const { user } = useUser();
-    console.log(user)
     const [selected, setSelected] = useState<number | null>(null);
     const [showPreview, setShowPreview] = useState(false);
     const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +63,9 @@ const MainPage = ({ dict }: { dict: Layout }) => {
     const { data: content4, mutateAsync: content4Async, isPending: content4IsPending } = useMutation({
         mutationKey: ["4th"],
         mutationFn: postReq,
+        onSuccess: () => {
+            toast.success("Content has been generated succsufully!")
+        }
     });
     const handleClickSubmit = async () => {
         setShowPreview(false);
