@@ -9,23 +9,25 @@ import CreatableSelect from "react-select/creatable";
 import TemplateDropBox from "./template";
 import { FiEye } from "react-icons/fi";
 import FormPreviewModal from "./preview";
-import AIContentSelector from "./contents";
+import axios from 'axios';
+import {
+    useMutation,
+} from '@tanstack/react-query'
+import toast, { Toaster } from "react-hot-toast";
 
+import { motion } from "framer-motion";
+import { CheckmarkIcon } from "react-hot-toast";
+import { useUser } from "@clerk/nextjs";
 const MainPage = ({ dict }: { dict: Layout }) => {
     const [formData, setFormData] = useState<TFormData>({});
+    const { user } = useUser();
+    console.log(user)
+    const [selected, setSelected] = useState<number | null>(null);
     const [showPreview, setShowPreview] = useState(false);
-    const aiResponses = [
-        "This is AI-generated content option 1.",
-        "This is AI-generated content option 2.",
-        "This is AI-generated content option 3.",
-        "This is AI-generated content option 4."
-    ];
-
     const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData!, [name]: value });
     };
-
     const handleChangeTextBox = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData!, [name]: value });
@@ -42,18 +44,57 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                 : selectedOption?.value || "", // Handle single value
         });
     };
-
-
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setShowPreview(true);
     };
+    const postReq = () => axios.post("https://content.mediamotive.es/webhook/6ba6de2f-800f-45c2-bf03-6b9a5b97a4c2", formData, { headers: { "Content-Type": "application/json" } });
+    const { data: content1, mutateAsync: content1Mutate, isPending: content1IsPending } = useMutation({
+        mutationKey: ["1st"],
+        mutationFn: postReq,
+    });
+    const { data: content2, mutateAsync: content2Mutate, isPending: content2IsPending } = useMutation({
+        mutationKey: ["2nd"],
+        mutationFn: postReq,
+    });
+    const { data: content3, mutateAsync: content3Async, isPending: content3IsPending } = useMutation({
+        mutationKey: ["3rd"],
+        mutationFn: postReq,
+    });
+    const { data: content4, mutateAsync: content4Async, isPending: content4IsPending } = useMutation({
+        mutationKey: ["4th"],
+        mutationFn: postReq,
+    });
+    const handleClickSubmit = async () => {
+        setShowPreview(false);
+        await content1Mutate();
+        await content2Mutate();
+        await content3Async();
+        await content4Async();
+    }
+    const arr = [
+        { data: content1, isPending: content1IsPending },
+        { data: content2, isPending: content2IsPending },
+        { data: content3, isPending: content3IsPending },
+        { data: content4, isPending: content4IsPending }
+    ];
 
+    const { mutateAsync: submitContent, isPending: isSubmitingContent } = useMutation({
+        mutationKey: ["submit content"],
+        mutationFn: () => axios.post("https://content.mediamotive.es/webhook/5c1e92f0-5b97-45e5-b0f9-6cc7bad566a4", { email: user?.emailAddresses[0].emailAddress, content: arr[selected!].data?.data }, { headers: { "Content-Type": "application/json" } }),
+        onSuccess: () => {
+            toast.success("Content has been forwarded to your email!")
+        },
+        onError: () => {
+            toast.error("Something went wrong, please try again!")
+        }
+    });
     return <section className="p-6">
         {
-            showPreview && <FormPreviewModal formData={formData} onClose={() => setShowPreview(false)} onSubmit={() => []} dict={dict} />
+            showPreview && <FormPreviewModal formData={formData} onClose={() => setShowPreview(false)} onSubmit={handleClickSubmit} dict={dict} />
         }
         <TemplateDropBox setFormData={setFormData} dict={dict} />
+        <Toaster position="top-left" reverseOrder={false} />
         <div className="flex items-center justify-center min-h-screen">
             <form
                 onSubmit={onSubmit}
@@ -63,6 +104,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                 <label className="block text-sm font-medium text-gray-700">{dict.form.subject.label}
                     <input
                         name="subject"
+                        value={formData.subject}
                         onChange={handleChangeInput}
                         placeholder={dict.form.subject.placeholder}
                         className="w-full p-2 border !text-sm border-gray-300 rounded focus:ring focus:ring-blue-300"
@@ -71,6 +113,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                 <label className="block text-sm font-medium text-gray-700">{dict.form.description.label}
                     <textarea
                         name="description"
+                        value={formData.description}
                         placeholder={dict.form.description.placeholder}
                         onChange={handleChangeTextBox}
                     />
@@ -335,7 +378,70 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                 <button type="submit" className="w-full flex items-center gap-2 justify-center bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"><FiEye />{dict.preview}</button>
             </form>
         </div>
-        <AIContentSelector aiResponses={aiResponses} dict={dict} />
+        <div className="min-h-[60vh] flex flex-col justify-between mx-auto mt-12 space-y-6">
+            <h2 className="text-3xl font-semibold text-gray-900 text-center">{dict.select_generated_content}</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {arr.map(({ isPending, data }, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        className={`relative p-5 border rounded-xl shadow-md transition-all cursor-pointer ${selected === index
+                            ? "border-blue-500 ring-2 ring-blue-300 scale-105"
+                            : "border-gray-300 hover:shadow-lg hover:scale-105"
+                            }`}
+                        onClick={() => {
+                            if (!data) {
+                                toast("Content not ready!")
+                                return;
+                            }
+                            setSelected(index)
+                        }}
+                    >
+                        {isPending ? (
+                            <div className="flex justify-center items-center h-40">
+                                <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        ) : (
+                            <textarea
+                                className="w-full h-40 bg-transparent resize-none outline-none text-gray-800 text-lg p-2 rounded-md"
+                                value={data?.data ?? "Content will show here"}
+                                readOnly={!!data}
+                                disabled={!data}
+                            />
+                        )}
+                        {selected === index && !isPending && (
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: "spring", stiffness: 200 }}
+                                className="absolute top-4 right-4"
+                            >
+                                <CheckmarkIcon className="!text-blue-500" />
+                            </motion.div>
+                        )}
+                    </motion.div>
+                ))}
+
+            </div>
+            <div className="flex justify-center">
+                <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-blue-600 text-white text-lg font-medium flex items-center justify-center py-3 w-full max-w-xl rounded-lg shadow-md hover:bg-blue-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={selected === null}
+                    onClick={() => {
+                        if (selected === null) {
+                            toast.error("Please select a content!")
+                            return;
+                        }
+                        submitContent();
+                    }}
+                >
+                    {isSubmitingContent ? <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div> : dict.confirm_selection}
+                </motion.button>
+            </div>
+        </div>
     </section>
 };
 

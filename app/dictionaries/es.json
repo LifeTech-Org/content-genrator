@@ -611,14 +611,14 @@
       }
     ],
     "outputFormats": [
-      { "label": "Texto plano", "value": "plain_text" },
-      { "label": "HTML", "value": "html" },
-      { "label": "JSON", "value": "json" },
-      { "label": "Markdown", "value": "markdown" },
-      { "label": "Documento Word", "value": "word" },
+      { "label": "Texto plano", "value": "Plain text" },
+      { "label": "Html", "value": "Html" },
+      { "label": "JSON", "value": "Json" },
+      { "label": "Markdown", "value": "Markdown" },
+      { "label": "Documento Word", "value": "Word" },
       {
         "label": "Listo para copiar (formato optimizado para copiar y pegar)",
-        "value": "ready_to_copy"
+        "value": "Ready to copy"
       }
     ],
     "offerDetails": [

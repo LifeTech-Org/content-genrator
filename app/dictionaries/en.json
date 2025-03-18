@@ -590,14 +590,14 @@
       { "label": "Scheduled (choose a specific future date)", "value": "" }
     ],
     "outputFormats": [
-      { "label": "Plain text", "value": "plain_text" },
-      { "label": "HTML", "value": "html" },
-      { "label": "JSON", "value": "json" },
-      { "label": "Markdown", "value": "markdown" },
-      { "label": "Word document", "value": "word" },
+      { "label": "Plain text", "value": "Plain text" },
+      { "label": "Html", "value": "Html" },
+      { "label": "JSON", "value": "Json" },
+      { "label": "Markdown", "value": "Markdown" },
+      { "label": "Word document", "value": "Word" },
       {
         "label": "Ready to copy (format optimized for copy-paste)",
-        "value": "ready_to_copy"
+        "value": "Ready to copy"
       }
     ],
     "offerDetails": [

@@ -16,7 +16,7 @@ const AIContentSelector = ({ aiResponses, dict }: { aiResponses: string[], dict:
     };
 
     return (
-        <div className="min-h-[60vh] flex flex-col justify-between mx-auto p-6 space-y-6">
+        <div className="min-h-[60vh] flex flex-col justify-between mx-auto mt-12 space-y-6">
             <h2 className="text-3xl font-semibold text-gray-900 text-center">{dict.select_generated_content}</h2>
 
             {/* Responsive Grid */}

@@ -599,14 +599,14 @@
       }
     ],
     "outputFormats": [
-      { "label": "Texte brut", "value": "plain_text" },
-      { "label": "HTML", "value": "html" },
-      { "label": "JSON", "value": "json" },
-      { "label": "Markdown", "value": "markdown" },
-      { "label": "Document Word", "value": "word" },
+      { "label": "Texte brut", "value": "Plain text" },
+      { "label": "Html", "value": "Html" },
+      { "label": "JSON", "value": "Json" },
+      { "label": "Markdown", "value": "Markdown" },
+      { "label": "Document Word", "value": "Word" },
       {
         "label": "Prêt à copier (format optimisé pour copier-coller)",
-        "value": "ready_to_copy"
+        "value": "Ready to copy"
       }
     ],
     "offerDetails": [

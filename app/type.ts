@@ -1,4 +1,6 @@
 export interface TFormData {
+  subject?: string;
+  description?: string;
   targetCountry?: string;
   language?: string;
   contentFormat?: string;

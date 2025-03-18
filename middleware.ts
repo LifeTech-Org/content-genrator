@@ -4,7 +4,7 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { supportedLanguages } from "./app/data";
 
-const isProtectedRoute = createRouteMatcher(["/"]);
+const isProtectedRoute = createRouteMatcher(["/", "/en", "/es", "/fr"]);
 const supportedLocales = supportedLanguages.map(({ value }) => value); // English, Spanish, French
 
 function getLocale(req: NextRequest) {

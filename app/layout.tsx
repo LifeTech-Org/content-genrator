@@ -1,29 +1,23 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+"use client"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./globals.css";
 import { ClerkProvider, } from "@clerk/nextjs";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
-export const metadata: Metadata = {
-  title: "Content Generator",
-  description: "AI-powered content generation tool",
-};
+const queryClient = new QueryClient()
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`${inter.variable} antialiased`}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <QueryClientProvider client={queryClient}>
+      <ClerkProvider>
+        <html lang="en">
+          <body className={`antialiased`}>
+            {children}
+          </body>
+        </html>
+      </ClerkProvider>
+    </QueryClientProvider >
   );
 }
