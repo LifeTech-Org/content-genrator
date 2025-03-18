@@ -577,15 +577,7 @@
       { "label": "ChatGPT (OpenAI)", "value": "ChatGPT (OpenAI)" },
       { "label": "Claude (Anthropic)", "value": "Claude (Anthropic)" },
       { "label": "Mistral AI", "value": "Mistral AI" },
-      { "label": "DeepSeek", "value": "DeepSeek" },
-      { "label": "Gemini (Google)", "value": "Gemini (Google)" },
-      { "label": "Llama 3 (Meta)", "value": "Llama 3 (Meta)" },
-      { "label": "Cohere", "value": "Cohere" },
-      { "label": "Mixtral", "value": "Mixtral" },
-      {
-        "label": "Automatic choice (system chooses the best model)",
-        "value": "Automatic choice"
-      }
+      { "label": "DeepSeek", "value": "DeepSeek" }
     ],
     "urgencyLevels": [
       { "label": "Standard (24-48h)", "value": "Standard (24-48h)" },
