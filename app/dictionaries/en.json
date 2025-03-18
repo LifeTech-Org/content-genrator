@@ -465,6 +465,14 @@
       {
         "label": "Announce changes in the offer or company",
         "value": "Announce changes in the offer or company"
+      },
+      {
+        "label": "SEO/Traffic",
+        "value": "SEO/Traffic"
+      },
+      {
+        "label": "Engagement",
+        "value": "Engagement"
       }
     ],
     "contentLengths": [

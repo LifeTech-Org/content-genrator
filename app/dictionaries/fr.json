@@ -471,6 +471,14 @@
       {
         "label": "Annoncer des changements dans l'offre ou l'entreprise",
         "value": "Announce changes in the offer or company"
+      },
+      {
+        "label": "SEO/Trafiс",
+        "value": "SEO/Traffic"
+      },
+      {
+        "label": "Engagement/Interaction",
+        "value": "Engagement"
       }
     ],
     "contentLengths": [

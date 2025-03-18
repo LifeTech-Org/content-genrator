@@ -480,6 +480,14 @@
       {
         "label": "Anunciar cambios en la oferta o empresa",
         "value": "Announce changes in the offer or company"
+      },
+      {
+        "label": "SEO/Tráfico",
+        "value": "SEO/Traffic"
+      },
+      {
+        "label": "Compromiso/Interacción",
+        "value": "Engagement"
       }
     ],
     "contentLengths": [
