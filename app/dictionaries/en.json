@@ -145,6 +145,7 @@
     }
   },
   "preview": "Preview",
+  "preview_html": "Preview HTML",
   "select_generated_content": "Select Your AI-Generated Content",
   "preview_modal": {
     "title": "Form Preview",

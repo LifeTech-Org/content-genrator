@@ -145,6 +145,7 @@
     }
   },
   "preview": "Vista previa",
+  "preview_html": "Vista previa HTML",
   "select_generated_content": "Seleccione su contenido generado por IA",
   "preview_modal": {
     "title": "Vista previa del formulario",

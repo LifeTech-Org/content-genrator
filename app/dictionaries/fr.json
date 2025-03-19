@@ -145,6 +145,7 @@
     }
   },
   "preview": "Aperçu",
+  "preview_html": "Aperçu HTML",
   "select_generated_content": "Sélectionnez votre contenu généré par IA",
   "preview_modal": {
     "title": "Aperçu du formulaire",

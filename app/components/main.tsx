@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import React, { useState } from "react";
@@ -10,6 +11,7 @@ import TemplateDropBox from "./template";
 import { FiEye } from "react-icons/fi";
 import FormPreviewModal from "./preview";
 import axios from 'axios';
+import { AiOutlineEye } from "react-icons/ai";
 import {
     useMutation,
 } from '@tanstack/react-query'
@@ -18,8 +20,10 @@ import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { CheckmarkIcon } from "react-hot-toast";
 import { useUser } from "@clerk/nextjs";
+import HtmlPreviewModal from "./html-preview";
 const MainPage = ({ dict }: { dict: Layout }) => {
     const [formData, setFormData] = useState<TFormData>({});
+    const [showHtmlPreview, setShowHtmlPreview] = useState(false);
     const { user } = useUser();
     const [selected, setSelected] = useState<number | null>(null);
     const [showPreview, setShowPreview] = useState(false);
@@ -83,7 +87,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
 
     const { mutateAsync: submitContent, isPending: isSubmitingContent } = useMutation({
         mutationKey: ["submit content"],
-        mutationFn: () => axios.post("https://content.mediamotive.es/webhook/5c1e92f0-5b97-45e5-b0f9-6cc7bad566a4", { email: user?.emailAddresses[0].emailAddress, content: arr[selected!].data?.data.content, model: arr[selected!].data?.data.model }, { headers: { "Content-Type": "application/json" } }),
+        mutationFn: () => axios.post("https://content.mediamotive.es/webhook/5c1e92f0-5b97-45e5-b0f9-6cc7bad566a4", { email: user?.emailAddresses[0].emailAddress, content: arr[selected!].data?.data.content, model: arr[selected!].data?.data.model, format: formData.outputFormats }, { headers: { "Content-Type": "application/json" } }),
         onSuccess: () => {
             toast.success("Content has been forwarded to your email!")
         },
@@ -96,6 +100,9 @@ const MainPage = ({ dict }: { dict: Layout }) => {
             showPreview && <FormPreviewModal formData={formData} onClose={() => setShowPreview(false)} onSubmit={handleClickSubmit} dict={dict} />
         }
         <TemplateDropBox setFormData={setFormData} dict={dict} />
+        {
+            selected !== null && <HtmlPreviewModal htmlContent={arr[selected!].data?.data.content} isOpen={showHtmlPreview} onClose={() => setShowHtmlPreview(false)} />
+        }
         <Toaster position="top-left" reverseOrder={false} />
         <div className="flex items-center justify-center min-h-screen">
             <form
@@ -416,9 +423,21 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                                     onCopy={(e) => e.preventDefault()}
                                 />
                                 {data?.data && (
-                                    <span className="absolute bottom-4 right-4 bg-blue-100 text-gray-700 text-xs px-2 py-1 rounded-md">
+                                    <span className="absolute top-4 left-4 bg-blue-100 text-gray-700 text-xs px-2 py-1 rounded-md">
                                         {data.data.model}
                                     </span>
+                                )}
+
+                                {/* Preview Button */}
+                                {(data?.data?.content && formData.outputFormats === "Html") && (
+                                    <button
+                                        className="absolute bottom-2 right-2 flex items-center gap-1 !bg-green-800 !text-white !px-2 !py-2 rounded-md !text-xs !hover:bg-blue-600 transition"
+                                        onClick={(e) => {
+                                            setShowHtmlPreview(true);
+                                        }}
+                                    >
+                                        <AiOutlineEye className="w-4 h-4" />{dict.preview_html}
+                                    </button>
                                 )}
                             </>
                         )}
@@ -427,12 +446,13 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ type: "spring", stiffness: 200 }}
-                                className="absolute top-4 right-4"
+                                className="absolute bottom-4 left-4"
                             >
                                 <CheckmarkIcon className="!text-blue-500" />
                             </motion.div>
                         )}
                     </motion.div>
+
                 ))}
 
 

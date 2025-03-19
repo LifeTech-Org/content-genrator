@@ -39,6 +39,7 @@ export interface Layout {
   upload_placeholder: string;
   form: Form;
   preview: string;
+  preview_html: string;
   select_generated_content: string;
   preview_modal: PreviewModal;
   confirm_selection: string;
