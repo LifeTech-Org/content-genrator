@@ -47,7 +47,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
         e.preventDefault();
         setShowPreview(true);
     };
-    const postReq = () => axios.post("https://content.mediamotive.es/webhook/6ba6de2f-800f-45c2-bf03-6b9a5b97a4c2", formData, { headers: { "Content-Type": "application/json" } });
+    const postReq = () => axios.post("https://content.mediamotive.es/webhook-test/6ba6de2f-800f-45c2-bf03-6b9a5b97a4c2", formData, { headers: { "Content-Type": "application/json" } });
     const { data: content1, mutateAsync: content1Mutate, isPending: content1IsPending } = useMutation({
         mutationKey: ["1st"],
         mutationFn: postReq,
@@ -83,7 +83,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
 
     const { mutateAsync: submitContent, isPending: isSubmitingContent } = useMutation({
         mutationKey: ["submit content"],
-        mutationFn: () => axios.post("https://content.mediamotive.es/webhook/5c1e92f0-5b97-45e5-b0f9-6cc7bad566a4", { email: user?.emailAddresses[0].emailAddress, content: arr[selected!].data?.data }, { headers: { "Content-Type": "application/json" } }),
+        mutationFn: () => axios.post("https://content.mediamotive.es/webhook/5c1e92f0-5b97-45e5-b0f9-6cc7bad566a4", { email: user?.emailAddresses[0].emailAddress, content: arr[selected!].data?.data.content, model: arr[selected!].data?.data.model }, { headers: { "Content-Type": "application/json" } }),
         onSuccess: () => {
             toast.success("Content has been forwarded to your email!")
         },
@@ -107,6 +107,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                     <input
                         name="subject"
                         value={formData.subject}
+                        required
                         onChange={handleChangeInput}
                         placeholder={dict.form.subject.placeholder}
                         className="w-full p-2 border !text-sm border-gray-300 rounded focus:ring focus:ring-blue-300"
@@ -115,6 +116,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                 <label className="block text-sm font-medium text-gray-700">{dict.form.description.label}
                     <textarea
                         name="description"
+                        required
                         value={formData.description}
                         placeholder={dict.form.description.placeholder}
                         onChange={handleChangeTextBox}
@@ -395,23 +397,30 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                             }`}
                         onClick={() => {
                             if (!data) {
-                                toast("Content not ready!")
+                                toast("Content not ready!");
                                 return;
                             }
-                            setSelected(index)
+                            setSelected(index);
                         }}
                     >
                         {isPending ? (
                             <div className="flex justify-center items-center h-40">
-                                <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                                <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin select-none"></div>
                             </div>
                         ) : (
-                            <textarea
-                                className="w-full h-40 bg-transparent resize-none outline-none text-gray-800 text-lg p-2 rounded-md"
-                                value={data?.data ?? "Content will show here"}
-                                readOnly={!!data}
-                                disabled={!data}
-                            />
+                            <>
+                                <textarea
+                                    className="w-full h-40 bg-transparent resize-none outline-none text-gray-800 text-lg p-2 rounded-md select-none"
+                                    value={data?.data.content ?? "Content will show here"}
+                                    disabled={!data?.data}
+                                    onCopy={(e) => e.preventDefault()}
+                                />
+                                {data?.data && (
+                                    <span className="absolute bottom-4 right-4 bg-blue-100 text-gray-700 text-xs px-2 py-1 rounded-md">
+                                        {data.data.model}
+                                    </span>
+                                )}
+                            </>
                         )}
                         {selected === index && !isPending && (
                             <motion.div
@@ -425,6 +434,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
                         )}
                     </motion.div>
                 ))}
+
 
             </div>
             <div className="flex justify-center">

@@ -577,7 +577,11 @@
       { "label": "ChatGPT (OpenAI)", "value": "ChatGPT (OpenAI)" },
       { "label": "Claude (Anthropic)", "value": "Claude (Anthropic)" },
       { "label": "Mistral AI", "value": "Mistral AI" },
-      { "label": "DeepSeek", "value": "DeepSeek" }
+      { "label": "DeepSeek", "value": "DeepSeek" },
+      {
+        "label": "Automatic choice (system chooses the best model)",
+        "value": "Automatic choice"
+      }
     ],
     "urgencyLevels": [
       { "label": "Standard (24-48h)", "value": "Standard (24-48h)" },
