@@ -47,7 +47,7 @@ const MainPage = ({ dict }: { dict: Layout }) => {
         e.preventDefault();
         setShowPreview(true);
     };
-    const postReq = () => axios.post("https://content.mediamotive.es/webhook-test/6ba6de2f-800f-45c2-bf03-6b9a5b97a4c2", formData, { headers: { "Content-Type": "application/json" } });
+    const postReq = () => axios.post("https://content.mediamotive.es/webhook/6ba6de2f-800f-45c2-bf03-6b9a5b97a4c2", formData, { headers: { "Content-Type": "application/json" } });
     const { data: content1, mutateAsync: content1Mutate, isPending: content1IsPending } = useMutation({
         mutationKey: ["1st"],
         mutationFn: postReq,
